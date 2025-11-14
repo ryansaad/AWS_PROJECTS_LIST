@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin "AWS_ECR_URI"
+  build:
+    commands:
+      - echo Building the Docker image...
+      - docker build -t 2048-game .
+      - echo Tagging the Docker image...
+      - docker tag 2048-game:latest "AWS_ECR_URI"/2048-game-repo:latest
+  post_build:
+    commands:
+      - echo Pushing the Docker image to Amazon ECR...
+      - docker push "AWS_ECR_URI"/2048-game-repo:latest
+      - echo Creating imagedefinitions.json file for ECS deployment...
+      - echo '[{"name":"2048-container","imageUri":""AWS_ECR_URI"/2048-game-repo:latest"}]' > imagedefinitions.json
+artifacts:
+  files:
+    - imagedefinitions.json
