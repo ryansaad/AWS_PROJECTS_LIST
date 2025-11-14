@@ -1,0 +1,13 @@
+# Terraform state files
+*.tfstate
+*.tfstate.backup
+
+# Terraform credential files
+*.tfvars
+
+# Terraform provider plugins
+.terraform/
+.terraform.lock.hcl
+
+# Other files
+awscliv2.zip
