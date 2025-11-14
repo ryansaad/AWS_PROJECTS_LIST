@@ -203,5 +203,5 @@ resource "azurerm_storage_blob" "asset_files" {
 
 
 resource "aws_route53_zone" "main" {
-  name = "rsdeveloper.ship"
+  name = "rsdeveloper.shop"
 }
