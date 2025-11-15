@@ -50,4 +50,6 @@ The application itself is a simple weather tracker, but the focus of the project
 
 Detailed, step-by-step instructions for deploying this project are available in the `instructions.md` file.
 
-[**See the full setup instructions here](./instructions.md)**](https://github.com/your-username/your-repo-name/blob/main/instructions.md)
+[**See the full setup instructions here](./instructions.md)**](https://github.com/ryansaad/Multi-cloud-Weather-Tracker
+/blob/main/instructions.md)
+
